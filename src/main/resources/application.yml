@@ -1,0 +1,23 @@
+application:
+    name: Social Workflow
+spring:
+    jackson:
+        serialization:
+            write_dates_as_timestamps: false
+            indent_output: true
+            date-format: com.fasterxml.jackson.databind.util.ISO8601DateFormat
+            default-property-inclusion: non_empty
+    datasource:
+        url: localhost:5432/postgres
+        username: postgres
+        password: password
+        driver-class-name: org.postgresql.Driver
+    jpa:
+        show-sql: false
+        properties:
+            hibernate:
+                format_sql: true
+                dialect: com.opentext.workflow.hibernate.MyPostgreSQL94Dialect
+                #default_schema: wfs
+        hibernate:
+            ddl-auto: none
